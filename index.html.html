@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大腦健康研究與問答應用程式</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color-light: #f7fafc;
+            --bg-secondary-light: #ffffff;
+            --text-color-light: #2d3748;
+            --text-secondary-light: #718096;
+            --border-color-light: #e2e8f0;
+            --accent-color: #4299e1;
+
+            --bg-color-dark: #1a202c;
+            --bg-secondary-dark: #2d3748;
+            --text-color-dark: #e2e8f0;
+            --text-secondary-dark: #a0aec0;
+            --border-color-dark: #4a5568;
+        }
+
+        html.dark {
+            --bg-color: var(--bg-color-dark);
+            --bg-secondary: var(--bg-secondary-dark);
+            --text-color: var(--text-color-dark);
+            --text-secondary: var(--text-secondary-dark);
+            --border-color: var(--border-color-dark);
+        }
+
+        html:not(.dark) {
+            --bg-color: var(--bg-color-light);
+            --bg-secondary: var(--bg-secondary-light);
+            --text-color: var(--text-color-light);
+            --text-secondary: var(--text-secondary-light);
+            --border-color: var(--border-color-light);
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .prose h2, .prose h3 {
+            color: var(--text-color);
+        }
+        
+        .prose p, .prose li {
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+
+        <!-- Header and Theme Toggle -->
+        <header class="flex justify-between items-center mb-8">
+            <h1 class="text-2xl md:text-3xl font-bold" style="color: var(--accent-color);">大腦健康：從發炎到預防的整合分析</h1>
+            <button id="theme-toggle" class="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2" style="background-color: var(--bg-secondary); color: var(--text-color); border: 1px solid var(--border-color);">
+                <svg id="theme-icon-light" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <svg id="theme-icon-dark" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+        </header>
+
+        <main class="space-y-8">
+            <!-- Research Summary Section -->
+            <section id="summary" class="card rounded-lg p-6 shadow-md">
+                <h2 class="text-2xl font-bold mb-4 border-b pb-2" style="border-color: var(--border-color);">研究重點摘要：寫給每個關心大腦健康的您</h2>
+                <div class="prose max-w-none space-y-4">
+                    <p>您是否曾感覺記憶力變差、腦袋卡卡的？這不完全是「老了」這麼簡單。最新研究發現，<strong>大腦的「慢性發炎」</strong>是影響我們記憶力的關鍵因素。</p>
+                    
+                    <h3 class="text-xl font-semibold">1. 為什麼大腦會「發炎」？</h3>
+                    <p>想像我們的身體有個警報系統，當有壓力或受傷時就會響起，這就是「發炎」。但如果這個警報一直響個不停，就變成了「慢性發炎」。在大腦裡，這種持續的微小火苗會慢慢傷害腦細胞，影響記憶和思考。壓力太大、睡眠不足、不健康的飲食習慣都可能是點燃這把火的元兇。</p>
+
+                    <h3 class="text-xl font-semibold">2. 中醫怎麼看「大腦過勞」？</h3>
+                    <p>中醫不把「大腦過勞」看作單一問題，而是全身失衡的表現。它認為我們的腦力與「氣、血、陰、陽」的平衡，以及心、脾、腎等器官的健康息息相關。例如：</p>
+                    <ul class="list-disc pl-5">
+                        <li><strong>氣虛：</strong>像電力不足，容易疲倦、注意力不集中。</li>
+                        <li><strong>血虛：</strong>養分不夠，會頭暈、心悸、健忘。</li>
+                        <li><strong>陰虛：</strong>身體太乾燥，會口乾、盜汗、煩躁失眠。</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold">3. 柑橘類水果中的神奇力量：橙皮苷與橙皮素</h3>
+                    <p>好消息是，天然食物中就藏著保護大腦的寶藏。研究發現，橘子、柳丁等柑橘類水果富含的<strong>橙皮苷</strong>和<strong>橙皮素</strong>，就像大腦的消防員和修理工：</p>
+                    <ul class="list-disc pl-5">
+                        <li><strong>抗發炎、抗氧化：</strong>幫助撲滅大腦裡的火苗，減少自由基傷害。</li>
+                        <li><strong>促進神經新生：</strong>幫助長出新的腦細胞，強化記憶連結。</li>
+                        <li><strong>改善腦部血流：</strong>確保大腦有充足的氧氣和養分。</li>
+                        <li><strong>腸腦連結：</strong>有趣的發現是，我們吃下的橙皮苷需要腸道好菌轉化成「橙皮素」才能被好好吸收。這也證明了腸道健康對大腦至關重要！</li>
+                    </ul>
+                    <p>總結來說，記憶力衰退並非無法逆轉。透過<strong>健康的生活方式</strong>來減少身體發炎，並藉由<strong>天然食物（如柑橘）</strong>與<strong>中醫的體質調理</strong>，我們可以多管齊下，共同維護我們最寶貴的大腦資產。</p>
+                </div>
+            </section>
+
+            <!-- YouTube Video Section -->
+            <section id="video" class="card rounded-lg p-6 shadow-md">
+                 <h2 class="text-2xl font-bold mb-4 border-b pb-2" style="border-color: var(--border-color);">相關影片：中醫談大腦修復</h2>
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe class="rounded-md" src="https://www.youtube.com/embed/yeGSYETNi8k?si=dENbKDdYbPBImAIu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <!-- Q&A Section -->
+            <section id="qa" class="card rounded-lg p-6 shadow-md">
+                <h2 class="text-2xl font-bold mb-4 border-b pb-2" style="border-color: var(--border-color);">智慧問答區</h2>
+                <div class="space-y-4">
+                    <p style="color: var(--text-secondary);">針對報告內容提出您的問題，系統將為您生成解答。</p>
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <input type="text" id="question-input" placeholder="例如：橙皮素對大腦有什麼好處？" class="flex-grow p-3 rounded-md border" style="background-color: var(--bg-color); border-color: var(--border-color);">
+                        <button id="ask-button" class="px-6 py-3 rounded-md font-semibold text-white transition-colors" style="background-color: var(--accent-color); hover:bg-blue-600;">
+                            提出問題
+                        </button>
+                    </div>
+                    <div id="answer-container" class="mt-4 p-4 border-l-4 rounded-r-lg hidden" style="border-color: var(--accent-color); background-color: var(--bg-color);">
+                        <strong id="answer-question" class="block mb-2"></strong>
+                        <p id="answer-text" style="color: var(--text-secondary);"></p>
+                    </div>
+                     <div id="loading-indicator" class="mt-4 hidden text-center">
+                        <p style="color: var(--text-secondary);">正在為您生成答案，請稍候...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Saved Questions Section -->
+            <section id="saved-questions" class="card rounded-lg p-6 shadow-md">
+                <h2 class="text-2xl font-bold mb-4 border-b pb-2" style="border-color: var(--border-color);">問答記錄</h2>
+                <div id="saved-list" class="space-y-2">
+                    <p id="no-saved-questions" style="color: var(--text-secondary);">目前沒有已儲存的問答。</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // --- Theme Toggle ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const lightIcon = document.getElementById('theme-icon-light');
+        const darkIcon = document.getElementById('theme-icon-dark');
+
+        // Check for saved theme in localStorage and apply it
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            lightIcon.classList.add('hidden');
+            darkIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            lightIcon.classList.remove('hidden');
+            darkIcon.classList.add('hidden');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            lightIcon.classList.toggle('hidden', isDark);
+            darkIcon.classList.toggle('hidden', !isDark);
+        });
+
+        // --- Q&A Logic ---
+        const askButton = document.getElementById('ask-button');
+        const questionInput = document.getElementById('question-input');
+        const answerContainer = document.getElementById('answer-container');
+        const answerQuestion = document.getElementById('answer-question');
+        const answerText = document.getElementById('answer-text');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const savedList = document.getElementById('saved-list');
+        const noSavedQuestions = document.getElementById('no-saved-questions');
+
+        let qaPairs = [];
+
+        askButton.addEventListener('click', handleQuestion);
+        questionInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleQuestion();
+            }
+        });
+        
+        function handleQuestion() {
+            const question = questionInput.value.trim();
+            if (!question) {
+                alert('請先輸入問題！');
+                return;
+            }
+
+            // Show loading and hide previous answer
+            loadingIndicator.classList.remove('hidden');
+            answerContainer.classList.add('hidden');
+            
+            // Simulate an async call to an AI to get the answer
+            setTimeout(() => {
+                const answer = generateMockAnswer(question);
+
+                // Hide loading and show new answer
+                loadingIndicator.classList.add('hidden');
+                answerQuestion.textContent = `問：${question}`;
+                answerText.textContent = answer;
+                answerContainer.classList.remove('hidden');
+
+                // Save and update the list
+                saveAndDisplayQA(question, answer);
+                questionInput.value = '';
+            }, 1500); // Simulate network delay
+        }
+
+        function generateMockAnswer(question) {
+            // This is a simplified mock function. A real implementation would use NLP and search the provided documents.
+            const lowerQuestion = question.toLowerCase();
+            if (lowerQuestion.includes('橙皮素') || lowerQuestion.includes('hesperidin') || lowerQuestion.includes('柑橘')) {
+                return "根據研究，橙皮素（Hesperidin）是柑橘類水果中的一種黃酮類化合物，它對大腦有多種益處。主要機制包括：1. 強效的抗氧化與抗發炎能力，能減少大腦細胞的損傷。 2. 促進神經新生（新神經元生長）和突觸形成，有助於改善記憶功能。 3. 改善腦部血液循環，確保大腦獲得充足的養分與氧氣。有趣的是，橙皮苷需要透過腸道菌群轉化為其代謝物橙皮素後，才能更好地被人體吸收利用，這也凸顯了腸道健康的重要性。";
+            } else if (lowerQuestion.includes('發炎') || lowerQuestion.includes('inflammation')) {
+                return "大腦慢性發炎（Neuroinflammation）是導致認知功能下降的關鍵因素。當大腦中的免疫細胞（如小膠質細胞）持續被活化，釋放發炎信號時，就會造成「神經發炎性老化」。這種慢性、低度的發炎狀態會損害神經元、影響突觸可塑性，並減少新神經元的生成，最終導致記憶力衰退和認知障礙。壓力、睡眠不足和不健康的飲食都可能加劇這種發炎反應。";
+            } else if (lowerQuestion.includes('中醫') || lowerQuestion.includes('tcm') || lowerQuestion.includes('過勞')) {
+                 return "中醫認為「大腦過勞」或「腦疲勞」並非單一疾病，而是全身性的「虛勞」表現。其成因與氣、血、陰、陽的失衡以及臟腑功能失調有關，特別是心、脾、腎。例如，「氣虛」會導致能量不足、注意力不集中；「血虛」會因滋養不夠而頭暈健忘；「陰虛」則因體內津液不足導致虛熱、失眠。治療上，中醫會根據個人體質進行辨證論治，透過食療、草藥和生活習慣調整來恢復全身平衡，從而改善腦部功能。";
+            } else if (lowerQuestion.includes('記憶力')) {
+                return "記憶力衰退的成因複雜，除了正常老化外，關鍵因素是「大腦慢性發炎」。此外，中醫觀點認為這與全身的氣血失衡有關。要改善記憶力，可以從多方面著手：1. 透過飲食（如攝取富含橙皮素的柑橘類水果）和健康生活習慣來對抗大腦發炎。 2. 根據中醫體質進行調理，補充氣血、滋養陰液。 3. 確保充足睡眠、規律運動和有效管理壓力。";
+            }
+            return "很抱歉，我目前主要針對報告中關於「大腦發炎」、「中醫觀點」和「橙皮素」的內容進行回答。請嘗試提出與這些主題更相關的問題。";
+        }
+        
+        function saveAndDisplayQA(question, answer) {
+            // Add to the beginning of the array
+            qaPairs.unshift({ question, answer });
+            
+            // Clear current list
+            savedList.innerHTML = '';
+            
+            // Re-render the list
+            qaPairs.forEach((pair, index) => {
+                const link = document.createElement('a');
+                link.href = '#';
+                link.textContent = pair.question;
+                link.className = 'block p-2 rounded-md transition-colors';
+                link.style.color = 'var(--accent-color)';
+                link.style.hoverBackgroundColor = 'var(--bg-color)';
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    answerQuestion.textContent = `問：${pair.question}`;
+                    answerText.textContent = pair.answer;
+                    answerContainer.classList.remove('hidden');
+                    window.scrollTo({ top: answerContainer.offsetTop - 20, behavior: 'smooth' });
+                });
+                savedList.appendChild(link);
+            });
+
+            if (noSavedQuestions) {
+                noSavedQuestions.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
